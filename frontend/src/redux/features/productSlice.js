@@ -27,10 +27,10 @@ export const productSlice = createSlice({
   initialState,
   reducers: {
     sortlow: (state) => {
-      state.products.sort((a, b) => a.title.localeCompare(b.title));
+      state.products.sort((a, b) => a.price - b.price);
     },
     sorthigh: (state) => {
-      state.products.sort((a, b) => b.title.localeCompare(a.title));
+      state.products.sort((a, b) => b.price - a.price);
     },
     search: (state, action) => {
       state.products = state.allProducts.filter((item) =>
